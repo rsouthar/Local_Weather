@@ -19,7 +19,6 @@
 .icon h1 {
   padding: 30px;
   font-size: 100px;
-  text-align: center;
 }
 
 .switch button {
@@ -39,5 +38,4 @@ button {
 .credit h1 {
   padding: 30px;
   font-size: 25px;
-  text-align: center;
 }
