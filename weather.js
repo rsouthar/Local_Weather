@@ -1,15 +1,18 @@
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(showPosition);
-} else {
-  alert('Geolocation is not supported in your browser');
+var temp;
+var loc;
+
+function update(weather){
+   temp.innerHTML = weather.temp;
+   loc.innerHTML = weather.loc;
 }
 
-function showPosition(position) {
-  var w = "https://fcc-weather-api.glitch.me/api/current?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
+window.onload = function() {
+  temp = document.getElementById("temp");
+  loc = document.getElementById("location");
 
-  $.getJSON(w, function(data){
-    $(".location").html(data.name + ", " + data.sys.country);
-    $("#temp").html(data.main.temp.toFixed(1));
-  });
+  var weather = {};
+    weather.temp = 60;
+    weather.loc = "Ocean Springs";
 
+  update(weather);
 }
