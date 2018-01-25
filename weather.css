@@ -7,16 +7,17 @@
   max-width: 800px;
 }
 
-.container h1 {
+.location {
   font-size: 55px;
+  color: black;
 }
 
-.temp h1 {
+.temp {
   padding: 30px;
   font-size: 100px;
 }
 
-.icon h1 {
+.icon {
   padding: 30px;
   font-size: 100px;
 }
