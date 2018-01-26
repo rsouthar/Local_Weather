@@ -4,12 +4,12 @@ var loc;
 var icon;
 
 function updateByZip(zip) {
-  var url = "http://api.openweathermap.org/data/2.5/weather?" + "zip=" + zip + "&APPID=" + APPID;
+  var url = "https://api.openweathermap.org/data/2.5/weather?" + "zip=" + zip + "&APPID=" + APPID;
     sendRequest(url);
 }
 
 function  updateByGeo(lat, lon) {
-  var url = "http://api.openweathermap.org/data/2.5/weather?" + "lat=" + lat + "&lon=" + lon + "&APPID=" + APPID;
+  var url = "https://api.openweathermap.org/data/2.5/weather?" + "lat=" + lat + "&lon=" + lon + "&APPID=" + APPID;
     sendRequest(url);
 }
 
@@ -20,7 +20,7 @@ function sendRequest(url) {
       var data = JSON.parse(xmlhttp.responseText);
       var weather = {};
       weather.icon = data.weather[0].id;
-      weather.loc = data.name;
+      weather.loc = data.name + ", " + data.sys.country;
       weather.temp = K2F(data.main.temp);
       update(weather);
     }

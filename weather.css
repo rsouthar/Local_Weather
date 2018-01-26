@@ -13,12 +13,12 @@
 
 #temp {
   padding: 30px;
-  font-size: 100px;
+  font-size: 120px;
 }
 
 #icon {
   padding: 30px;
-  font-size: 100px;
+  width: 120px;
 }
 
 .switch button {
