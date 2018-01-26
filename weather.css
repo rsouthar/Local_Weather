@@ -7,17 +7,16 @@
   max-width: 800px;
 }
 
-.location {
-  font-size: 55px;
-  color: black;
+#location {
+  font-size: 70px;
 }
 
-.temp {
+#temp {
   padding: 30px;
   font-size: 100px;
 }
 
-.icon {
+#icon {
   padding: 30px;
   font-size: 100px;
 }
