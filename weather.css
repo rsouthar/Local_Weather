@@ -16,9 +16,10 @@
   font-size: 120px;
 }
 
-#icon {
+img {
   padding: 30px;
   width: 120px;
+  color: white;
 }
 
 .switch button {
