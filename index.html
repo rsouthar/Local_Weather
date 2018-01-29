@@ -5,24 +5,20 @@
     <title>Local Weather</title>
     <link rel="stylesheet" href="weather.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <a href="https://icons8.com">Icon pack by Icons8</a>
+    <link rel="stylesheet" href="css/owfont-regular.css">
   </head>
   <body>
       <div class="container">
           <h1 id="location"></h1>
         <div class="row">
           <div class="col-sm-6 text-center">
-            <h1 id="temp">0</h1>
+            <span id="temp">0</span>
+            <span class="temp" id="switchTemp">&deg;F</span>
           </div>
           <div class="col-sm-6 text-center">
-            <img id="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK/SURBVGhD7dhZqE1RHMfxYx7yIPLAA1FkKJKUQiQypohEmUqKMidEyFASkbwZn4S8kJLkxRQZHkiIQoYkY4aS8fvd7X27hnu699jsvWv96vOwlruX/z5n73XWWqWQkJCQkJACpA3GYRHWYymmoh8aINdpiGk4j+9lPMcedEfuMgA3kRT7BsexBSuwAftwHcnffMZutEYushgWZXFXMBGNUFM6wRv8CK+5h8y/nTWwmE+Yj/qobdrjDLz+Lfogk0yBRfgY+WhVksbYD8d5hLb4J+mCCZiOgfCFNn6a7+AjNcSOv4iz2Al4MyftSDNDcRUOXt1DzMKBuL0RaaQlnsExh9uRRhbiKxz0CQ5iL87hC5KbeoomSCtz4biXotZfZjy+wZd3HpJHKUk3XIT/4So7Uowz3Us4dgc7Ko0D+eg40CQ7akhznEa7qJVukhffGbDijIKDnIpa5fPrN5VWZsAa/OWvOP76OsicqJVNnGSswVmszmmGBXgMBxmDrNIL1nA5atUhfXEHXixnjJ7IKv1hHa/hTOki1HeybEbgA7zwGLoi6zjJJB9q4hVqXP5YtEsL/3CZHTlLKwzCTvhTYJ1H4WvwU87Cf9wWtfIdP/RbsN4jqIcog2HnfTS1owBxx+mi0rpn2mHczNjhPqJIGQnrfoBou3w77uhho2C5AWuPtg3v40ZRHqvq2QxrX24j2WKmuXL9X3Eha+3bbdyNG+6di5YlsPZNNg7Fjdk2ChYXk9bu3qU0OW5cQ9WcXID4TnsmZu2d7XDf4RFM1Z0VJCthzReiVpyxSHaCo+3IeYbBWq35txObtfAO3Ye7F2mBvMXjIs8QkvXWavwxzgLJgcILeKzp4+ZpYZY8ftqKZOvtN7EOZd/p3nB76wV55KTko1XrdITr/h3wCOhwhnbBUxqPUYs0s4aEhISEhIRUkFLpB9nI/UITdpZzAAAAAElFTkSuQmCC"/>
+            <i id="icon" class="owf owf-501 owf-5x"/></i>
           </div>
-          <div class="col-sm-6 switch">
-            <button name="button">C/F</button>
-          </div>
-          <div class="col-sm-6 credit">
-            <h1>By: Richard Southard</h1>
-          </div>
+            <h1 id="credit">By: Richard Southard</h1>
         </div>
       </div>
       <script src="weather.js"></script>

@@ -16,27 +16,16 @@
   font-size: 120px;
 }
 
-img {
+#icon {
   padding: 30px;
-  width: 120px;
-  color: white;
+  font-size: 120px;
 }
 
-.switch button {
-  font-size: 50px;
+#switchTemp {
+  font-size: 120px;
 }
 
-button {
-  background-color: transparent;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  outline: none;
-  padding: 30px 50px;
-}
-
-.credit h1 {
-  padding: 30px;
+#credit {
+  margin-left: 30px;
   font-size: 25px;
 }
