@@ -20,9 +20,9 @@ function sendRequest(url) {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
       var data = JSON.parse(xmlhttp.responseText);
       var weather = {};
-      weather.icon = data.weather[0].id;
       weather.loc = data.name + ", " + data.sys.country;
       weather.temp = K2F(data.main.temp);
+      weather.icon = data.weather[0].id;
       update(weather);
       console.log(weather.icon);
 

@@ -3,7 +3,7 @@
  *  License - font: SIL OFL 1.1, css: MIT License
  */
 /* FONT PATH
- *fonts/owfont-regular.woff */
+ *../fonts/owfont-regular.woff */
 @font-face {
   font-family: 'owfont';
   src: url('../fonts/owfont-regular.eot?v=1.0.0');
