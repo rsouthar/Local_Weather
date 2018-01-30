@@ -2,7 +2,6 @@ var APPID = "9e41248a89f22ccb8cbe479cb75311e6";
 var temp;
 var loc;
 var icon;
-var tempC;
 
 function updateByZip(zip) {
   var url = "https://api.openweathermap.org/data/2.5/weather?" + "zip=" + zip + "&APPID=" + APPID;
@@ -24,7 +23,7 @@ function sendRequest(url) {
       weather.temp = K2F(data.main.temp);
       weather.icon = data.weather[0].id;
       update(weather);
-      console.log(weather.icon);
+      console.log(data);
 
     }
   };
@@ -44,6 +43,7 @@ function update(weather){
    temp.innerHTML = weather.temp;
    loc.innerHTML = weather.loc;
    icon.src = "/owfont-regular.css/" + weather.icon + ".png";
+
 }
 
 function showPosition(position) {
