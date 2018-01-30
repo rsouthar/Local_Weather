@@ -21,10 +21,9 @@ function sendRequest(url) {
       var weather = {};
       weather.loc = data.name + ", " + data.sys.country;
       weather.temp = K2F(data.main.temp);
-      weather.icon = data.weather[0].id;
+      weather.code = data.weather[0].id;
+      icon = document.getElementById("icon").className = "owf owf-" + weather.code;
       update(weather);
-      console.log(data);
-
     }
   };
   xmlhttp.open("GET", url, true);
@@ -42,20 +41,19 @@ function K2C(k) {
 function update(weather){
    temp.innerHTML = weather.temp;
    loc.innerHTML = weather.loc;
-   icon.src = "/owfont-regular.css/" + weather.icon + ".png";
-
+   icon.innerHTML = weather.code;
 }
 
 function showPosition(position) {
   updateByGeo(position.coords.latitude, position.coords.longitude);
 }
 
-window.onload = function() {
+window.onload = function(weather) {
   temp = document.getElementById("temp");
   loc = document.getElementById("location");
   icon = document.getElementById("icon");
 
-  if(navigator.eolocation) { //fix this
+  if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
   }else {
     var zip = window.prompt("Enter ZIP Code");
