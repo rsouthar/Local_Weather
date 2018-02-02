@@ -2,6 +2,9 @@ var APPID = "9e41248a89f22ccb8cbe479cb75311e6";
 var temp;
 var loc;
 var icon;
+var tempC;
+var tempF;
+var weather = {};
 
 function updateByZip(zip) {
   var url = "https://api.openweathermap.org/data/2.5/weather?" + "zip=" + zip + "&APPID=" + APPID;
@@ -18,16 +21,19 @@ function sendRequest(url) {
   xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
       var data = JSON.parse(xmlhttp.responseText);
-      var weather = {};
       weather.loc = data.name + ", " + data.sys.country;
-      weather.temp = K2F(data.main.temp);
+      tempC = Math.round(data.main.temp - 273.15) + String.fromCharCode(176) + "C";
+      tempF = Math.round(data.main.temp*(9/5)-459.67) + String.fromCharCode(176) + "F";
+      weather.temp = tempF;
       weather.code = data.weather[0].id;
       icon = document.getElementById("icon").className = "owf owf-" + weather.code;
       update(weather);
     }
   };
+
   xmlhttp.open("GET", url, true);
   xmlhttp.send();
+
 }
 
 function K2F(k) {
@@ -59,5 +65,4 @@ window.onload = function(weather) {
     var zip = window.prompt("Enter ZIP Code");
     updateByZip(zip);
   }
-
 }
