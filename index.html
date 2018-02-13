@@ -8,19 +8,23 @@
     <link href="https://websygen.github.io/owfont/css/owfont-regular.css" rel="stylesheet" type="text/css">
   </head>
   <body>
+      <h1 id="location" class="text-center"></h1>
       <div class="container">
-          <h1 id="location"></h1>
-        <div class="row">
-          <div class="col-sm-6 text-center">
+        <div class="circle">
+          <div class="col-sm-12 text-center">
+            <i id="icon"/></i>
+          </div>
+          <div class="col-sm-12 text-center">
             <span id="temp">0</span>
             <span class="temp" id="switchTemp"></span>
           </div>
-          <div class="col-sm-6 text-center">
-            <i id="icon"/></i>
-          </div>
-            <h1 id="credit">By: Richard Southard</h1>
         </div>
       </div>
+
+      <footer class="text-center">
+        <p class="foot">By: <a href="http://richardsouthard.com">Richard Southard</a></p>
+      </footer>
+
       <script src="weather.js"></script>
   </body>
 </html>

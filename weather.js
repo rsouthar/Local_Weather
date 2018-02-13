@@ -25,8 +25,8 @@ function sendRequest(url) {
       tempC = Math.round(data.main.temp - 273.15) + String.fromCharCode(176) + "C";
       tempF = Math.round(data.main.temp*(9/5)-459.67) + String.fromCharCode(176) + "F";
       weather.temp = tempF;
-      weather.code = data.weather[0].id;
-      icon = document.getElementById("icon").className = "owf owf-" + weather.code;
+      weather.icon = data.weather[0].id;
+      icon = document.getElementById("icon").className = "owf owf-" +  weather.icon;
       update(weather);
     }
   };
@@ -47,7 +47,9 @@ function K2C(k) {
 function update(weather){
    temp.innerHTML = weather.temp;
    loc.innerHTML = weather.loc;
-   icon.innerHTML = weather.code;
+   icon.src = weather.icon;
+   console.log(icon.src);
+   console.log(weather.code);
 }
 
 function showPosition(position) {

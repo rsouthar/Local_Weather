@@ -1,31 +1,66 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
 
-.container {
-  background-color: #706868;
+body {
+  background: url('img/mountains.jpeg') center center no-repeat;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  padding-bottom: 6rem;
+}
+
+.circle {
+  background: rgba(169,169,169,0.8);
   color: white;
-  margin-top: 50px;
-  border-radius: 15px;
-  max-width: 800px;
+  margin: 9.375rem auto 0;
+  max-width: 30rem;
+  height: 30rem;
+  width: 30rem;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 9.3rem;
 }
 
 #location {
-  font-size: 70px;
-}
-
-#temp {
-  padding: 30px;
-  font-size: 120px;
+  padding-top: 12rem;
+  font-size: 7rem;
+  color: #FFF;
 }
 
 #icon {
-  padding: 30px;
-  font-size: 120px;
+  padding-top: 2.25rem;
+  font-size: 13rem;
+  color: #FFF;
 }
 
-#switchTemp {
-  font-size: 120px;
+#temp {
+  font-size: 8rem;
+  color: #FFF;
 }
 
-#credit {
-  margin-left: 30px;
-  font-size: 25px;
+/* #switchTemp {
+  font-size: 7.5rem;
+} */
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.foot a {
+  color: #fff;
+}
+
+a:hover {
+  color: #333;
 }
