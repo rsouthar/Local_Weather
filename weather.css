@@ -3,8 +3,53 @@ html {
   box-sizing: border-box;
 }
 
-body {
-  background: url('img/mountains.jpeg') center center no-repeat;
+.one {
+  background: url('img/city.jpeg') center center no-repeat fixed;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  padding-bottom: 6rem;
+}
+
+.two {
+  background: url('img/mountains.jpeg') center center no-repeat fixed;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  padding-bottom: 6rem;
+}
+
+.three {
+  background: url('img/fog.jpeg') center center no-repeat fixed;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  padding-bottom: 6rem;
+}
+
+.four {
+  background: url('img/lake.jpg') center center no-repeat fixed;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  padding-bottom: 6rem;
+}
+
+.five {
+  background: url('img/night.jpeg') center center no-repeat fixed;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  padding-bottom: 6rem;
+}
+
+.six {
+  background: url('img/bridge.jpeg') center center no-repeat fixed;
   background-size: cover;
   position: relative;
   margin: 0;
@@ -13,34 +58,53 @@ body {
 }
 
 .circle {
-  background: rgba(169,169,169,0.8);
+  background-color: rgba(169,169,169,0.8);
   color: white;
-  margin: 9.375rem auto 0;
-  max-width: 30rem;
-  height: 30rem;
-  width: 30rem;
+  margin: 0 auto;
+  max-width: 40rem;
+  height: 40rem;
+  width: 40rem;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
   text-align: center;
-  line-height: 9.3rem;
+  line-height: 5rem;
+}
+
+.text-center {
+  margin-top: 10px;
 }
 
 #location {
-  padding-top: 12rem;
+  padding: 12rem;
   font-size: 7rem;
   color: #FFF;
 }
 
 #icon {
-  padding-top: 2.25rem;
-  font-size: 13rem;
-  color: #FFF;
+  padding: 2rem;
+  font-size: 8rem;
 }
 
 #temp {
-  font-size: 8rem;
-  color: #FFF;
+  font-size: 15rem;
+}
+
+#desc {
+  font-size: 3rem;
+}
+
+hr {
+  max-width: 15rem;
+  margin: 0 auto !important;
+}
+
+.highLow {
+  font-size: 3rem;
+}
+
+#max, #min {
+  font-size: 3rem;
 }
 
 /* #switchTemp {

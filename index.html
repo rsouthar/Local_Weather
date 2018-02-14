@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://websygen.github.io/owfont/css/owfont-regular.css" rel="stylesheet" type="text/css">
   </head>
-  <body>
+  <body id="whole">
       <h1 id="location" class="text-center"></h1>
       <div class="container">
         <div class="circle">
@@ -15,14 +15,23 @@
             <i id="icon"/></i>
           </div>
           <div class="col-sm-12 text-center">
-            <span id="temp">0</span>
+            <span id="temp"></span>
             <span class="temp" id="switchTemp"></span>
           </div>
+          <div class="col-sm-12 text-center">
+            <span id="desc"></span><hr>
+          </div>
+          <div class="col-sm-12 text-center highLow">
+            <span id="max"></span>&deg; /
+            <span id="min"></span>&deg;
+          </div>
+
         </div>
       </div>
 
-      <footer class="text-center">
-        <p class="foot">By: <a href="http://richardsouthard.com">Richard Southard</a></p>
+      <footer>
+        <p class="foot pull-left">By <a href="http://richardsouthard.com">Richard Southard</a></p>
+        <p class="sunset pull-right">Sunset at <span id="sunset"></span></p>
       </footer>
 
       <script src="weather.js"></script>
