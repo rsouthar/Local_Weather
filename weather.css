@@ -4,7 +4,7 @@ html {
 }
 
 .one {
-  background: url('img/city.jpeg') center center no-repeat fixed;
+  background: url('weather/img/city.jpeg') center center no-repeat fixed;
   background-size: cover;
   position: relative;
   margin: 0;
@@ -13,7 +13,7 @@ html {
 }
 
 .two {
-  background: url('img/mountains.jpeg') center center no-repeat fixed;
+  background: url('../img/mountains.jpeg') center center no-repeat fixed;
   background-size: cover;
   position: relative;
   margin: 0;
@@ -22,7 +22,7 @@ html {
 }
 
 .three {
-  background: url('img/fog.jpeg') center center no-repeat fixed;
+  background: url('../img/fog.jpeg') center center no-repeat fixed;
   background-size: cover;
   position: relative;
   margin: 0;
@@ -31,7 +31,7 @@ html {
 }
 
 .four {
-  background: url('img/lake.jpg') center center no-repeat fixed;
+  background: url('../img/lake.jpg') center center no-repeat fixed;
   background-size: cover;
   position: relative;
   margin: 0;
@@ -40,7 +40,7 @@ html {
 }
 
 .five {
-  background: url('img/night.jpeg') center center no-repeat fixed;
+  background: url('../img/night.jpeg') center center no-repeat fixed;
   background-size: cover;
   position: relative;
   margin: 0;
@@ -49,7 +49,7 @@ html {
 }
 
 .six {
-  background: url('img/bridge.jpeg') center center no-repeat fixed;
+  background: url('../img/bridge.jpeg') center center no-repeat fixed;
   background-size: cover;
   position: relative;
   margin: 0;
