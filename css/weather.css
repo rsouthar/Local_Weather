@@ -1,0 +1,140 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.one {
+  background: url('../img/city.jpeg') center center no-repeat fixed;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  padding-bottom: 6rem;
+}
+
+.two {
+  background: url('../img/mountains.jpeg') center center no-repeat fixed;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  padding-bottom: 6rem;
+}
+
+.three {
+  background: url('../img/fog.jpeg') center center no-repeat fixed;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  padding-bottom: 6rem;
+}
+
+.four {
+  background: url('../img/lake.jpg') center center no-repeat fixed;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  padding-bottom: 6rem;
+}
+
+.five {
+  background: url('../img/night.jpeg') center center no-repeat fixed;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  padding-bottom: 6rem;
+}
+
+.six {
+  background: url('../img/bridge.jpeg') center center no-repeat fixed;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  padding-bottom: 6rem;
+}
+
+.circle {
+  background-color: rgba(190,190,190,0.6);
+  position: absolute;
+  color: white;
+  margin: 0 auto;
+  height: 40rem;
+  width: 40rem;
+  top: 50%;
+  left: 50%;
+  margin-left: -175px;
+  margin-top: -250px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  display: table;
+}
+
+#location {
+  padding: 11rem;
+  font-size: 7rem;
+  color: #FFF;
+  line-height: normal;
+}
+
+#icon {
+  padding: 2rem;
+  font-size: 9rem;
+}
+
+#temp {
+  width: 400px;
+  height: 150px;
+  font-size: 16rem;
+  line-height: normal;
+}
+
+#temp span {
+  display: table-cell;
+  vertical-align: center;
+  text-align: center;
+}
+
+#desc {
+  font-size: 3rem;
+}
+
+hr {
+  max-width: 15rem;
+  margin: 0 auto !important;
+}
+
+.highLow {
+  font-size: 3rem;
+  line-height: normal;
+}
+
+#max, #min {
+  font-size: 3rem;
+}
+
+/* #switchTemp {
+  font-size: 7.5rem;
+} */
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.foot a {
+  color: #fff;
+}
+
+a:hover {
+  color: #333;
+}
