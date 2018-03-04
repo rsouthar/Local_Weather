@@ -3,25 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title>Local Weather</title>
-    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="css/weather.css">
+    <link rel="stylesheet" href="css/weather-icons.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://websygen.github.io/owfont/css/owfont-regular.css" rel="stylesheet" type="text/css">
+
   </head>
   <body id="whole">
       <h1 id="location" class="text-center"></h1>
       <div class="container">
-        <div class="circle">
-          <div class="col-sm-12 text-center">
+        <div class="circle text-center">
+          <div class="">
             <i id="icon"/></i>
           </div>
-          <div class="col-sm-12 text-center">
+          <div class="">
             <span id="temp"></span>
             <span class="temp" id="switchTemp"></span>
           </div>
-          <div class="col-sm-12 text-center">
+          <div class="">
             <span id="desc"></span><hr>
           </div>
-          <div class="col-sm-12 text-center highLow">
+          <div class=" highLow">
             <span id="max"></span>&deg; /
             <span id="min"></span>&deg;
           </div>
@@ -30,8 +31,8 @@
       </div>
 
       <footer>
-        <p class="foot pull-left">By <a href="http://richardsouthard.com">Richard Southard</a></p>
-        <p class="sunset pull-right">Sunset at <span id="sunset"></span></p>
+        <p class="foot pull-left">By <a href="https://richardsouthard.com">Richard Southard</a></p>
+        <p class="sunset pull-right"><span id="sunset"></span></p>
       </footer>
 
       <script src="weather.js"></script>
