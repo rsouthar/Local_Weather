@@ -68,7 +68,7 @@ function sendRequest(url) {
       weather.max = K2F(data.main.temp_max);
       weather.min = K2F(data.main.temp_min);
       weather.sunset = getTime(data.sys.sunset);
-      icon = document.getElementById("icon").className = "owf owf-" +  weather.code;
+      icon = document.getElementById("icon").className = "wi wi-owm-" +  weather.code;
       update(weather);
     }
   };
@@ -82,7 +82,7 @@ function getTime(t) {
   var ts = new Date(t * 1000);
   var hours = ts.getHours() - 12;
   var minutes = ts.getMinutes();
-  var time = hours + ":" + minutes;
+  var time = '<i class="wi wi-sunset"></i>' + " Sunset at " + hours + ":" + minutes;
   return time;
 }
 
