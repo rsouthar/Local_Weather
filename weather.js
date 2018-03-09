@@ -1,4 +1,4 @@
-var APPID = "9e41248a89f22ccb8cbe479cb75311e6";
+var APPID = "Put Weather API Here";
 var temp;
 var loc;
 var icon;
