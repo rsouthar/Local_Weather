@@ -1,4 +1,4 @@
-var APPID = "Put Weather API Here";
+var APPID = "9e41248a89f22ccb8cbe479cb75311e6";
 var temp;
 var loc;
 var icon;
@@ -78,10 +78,18 @@ function sendRequest(url) {
 
 }
 
+// Add a zero to the minutes ex. 7:02 instead of 7:2
+function addZero(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+
 function getTime(t) {
   var ts = new Date(t * 1000);
   var hours = ts.getHours() - 12;
-  var minutes = ts.getMinutes();
+  var minutes = addZero(ts.getMinutes());
   var time = '<i class="wi wi-sunset"></i>' + " Sunset at " + hours + ":" + minutes;
   return time;
 }
