@@ -5,19 +5,20 @@ var icon;
 var max;
 var min;
 var desc;
-var sunset;
-var tempC;
-var tempF;
+var sunrise, sunset;
 var weather = {};
 
 function update(weather){
-   temp.innerHTML = weather.temp;
+   temp.innerHTML = K2F(weather.temp) + "f";
    loc.innerHTML = weather.loc;
    icon.src = weather.code;
-   max.innerHTML = weather.max;
-   min.innerHTML = weather.min;
+   max.innerHTML = K2F(weather.max);
+   min.innerHTML = K2F(weather.min);
    desc.innerHTML = weather.desc;
-   sunset.innerHTML = weather.sunset;
+   sunset = getTime(weather.sunset);
+   sunrise = getTime(weather.sunrise);
+   console.log(sunset);
+   console.log(sunrise);
 }
 
 window.onload = function(weather) {
@@ -44,6 +45,10 @@ window.onload = function(weather) {
 
 }
 
+function showPosition(position) {
+  updateByGeo(position.coords.latitude, position.coords.longitude);
+}
+
 function updateByZip(zip) {
   var url = "https://api.openweathermap.org/data/2.5/weather?" + "zip=" + zip + "&APPID=" + APPID;
     sendRequest(url);
@@ -60,14 +65,13 @@ function sendRequest(url) {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
       var data = JSON.parse(xmlhttp.responseText);
       weather.loc = data.name + ", " + data.sys.country;
-      tempC = Math.round(data.main.temp - 273.15) + String.fromCharCode(176);
-      tempF = Math.round(data.main.temp*(9/5)-459.67) + String.fromCharCode(176);
-      weather.temp = tempF;
+      weather.temp = data.main.temp;
       weather.code = data.weather[0].id;
       weather.desc = data.weather[0].description;
-      weather.max = K2F(data.main.temp_max);
-      weather.min = K2F(data.main.temp_min);
-      weather.sunset = getTime(data.sys.sunset);
+      weather.max = data.main.temp_max;
+      weather.min = data.main.temp_min;
+      weather.sunset = data.sys.sunset;
+      weather.sunrise = data.sys.sunrise;
       icon = document.getElementById("icon").className = "wi wi-owm-" +  weather.code;
       update(weather);
     }
@@ -77,7 +81,7 @@ function sendRequest(url) {
   xmlhttp.send();
 
 }
-
+console.log();
 // Add a zero to the minutes ex. 7:02 instead of 7:2
 function addZero(i) {
   if (i < 10) {
@@ -86,22 +90,39 @@ function addZero(i) {
   return i;
 }
 
-function getTime(t) {
-  var ts = new Date(t * 1000);
-  var hours = ts.getHours() - 12;
+function getTime(sun) {
+  var ts = new Date(sun * 1000);
+  var hours = ts.getHours();
+  if (hours > 12 && hours <= 24) {
+    hours = ts.getHours() - 12;
+  } else {
+    hours = ts.getHours();
+  }
   var minutes = addZero(ts.getMinutes());
-  var time = '<i class="wi wi-sunset"></i>' + " Sunset at " + hours + ":" + minutes;
-  return time;
+  var time = hours + ":" + minutes;
+  console.log(time);
+  // get the current time
+  var curTime = new Date();
+  var h = curTime.getHours();
+  var m = curTime.getMinutes();
+  var c = h + ":" + m;
+
+  if (c <= time) {
+    return sunset.innerHTML = '<i class="wi wi-sunset"></i>' + " Sunset at " + time;
+  } else {
+    return sunset.innerHTML = '<i class="wi wi-sunrise"></i>' + " Sunrise at " + time;
+  }
 }
 
+function setTempUnit(tempUnit) {
+
+}
+
+
 function K2F(k) {
-  return Math.round(k*(9/5)-459.67);
+  return Math.round(k*(9/5)-459.67) + String.fromCharCode(176);
 }
 
 function K2C(k) {
-  return Math.round(k - 273.15);
-}
-
-function showPosition(position) {
-  updateByGeo(position.coords.latitude, position.coords.longitude);
+  return Math.round(k - 273.15) + String.fromCharCode(176);
 }
