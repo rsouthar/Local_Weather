@@ -1,4 +1,4 @@
-var APPID = "API Key Here";
+var APPID = "9e41248a89f22ccb8cbe479cb75311e6";
 var temp;
 var loc;
 var icon;
@@ -15,10 +15,13 @@ function update(weather){
    max.innerHTML = K2F(weather.max);
    min.innerHTML = K2F(weather.min);
    desc.innerHTML = weather.desc;
-   sunset = getTime(weather.sunset);
-   sunrise = getTime(weather.sunrise);
-   console.log(sunset);
-   console.log(sunrise);
+   //sunset = getTime(weather.sunset);
+   //sunrise = getTime(weather.sunrise);
+   //console.log(sunrise);
+   //console.log(sunset);
+   //var tt = currentTime(weather.dt);
+   console.log();
+
 }
 
 window.onload = function(weather) {
@@ -72,8 +75,14 @@ function sendRequest(url) {
       weather.min = data.main.temp_min;
       weather.sunset = data.sys.sunset;
       weather.sunrise = data.sys.sunrise;
+      weather.time = data.dt;
       icon = document.getElementById("icon").className = "wi wi-owm-" +  weather.code;
       update(weather);
+      getTime(data.sys.sunset, data.sys.sunrise);
+      //console.log(data.sys.sunset);
+      //console.log(data.sys.sunrise);
+      //console.log(data.sys.sunrise <= data.dt);
+      //console.log(data.sys.sunset > data.dt || data.sys.sunrise < data.dt);
     }
   };
 
@@ -90,8 +99,8 @@ function addZero(i) {
   return i;
 }
 
-function getTime(sun) {
-  var ts = new Date(sun * 1000);
+function getTime(sunset, sunrise) {
+  var ts = new Date(sunset * 1000);
   var hours = ts.getHours();
   if (hours > 12 && hours <= 24) {
     hours = ts.getHours() - 12;
@@ -100,20 +109,34 @@ function getTime(sun) {
   }
   var minutes = addZero(ts.getMinutes());
   var time = hours + ":" + minutes;
-  console.log(time);
-  // get the current time
+
+  var tx = new Date(sunrise * 1000);
+  var hours2 = tx.getHours();
+  if (hours2 > 12 && hours <= 24) {
+    hours2 = tx.getHours() - 12;
+  } else {
+    hours2 = tx.getHours();
+  }
+  var minutes2 = addZero(tx.getMinutes());
+  var tix = hours2 + ":" + minutes2;
+
+  //get the current time
   var curTime = new Date();
   var h = curTime.getHours();
-  var m = curTime.getMinutes();
+  var m = addZero(curTime.getMinutes());
   var c = h + ":" + m;
+  console.log("Current time " + c);
+  console.log("Sunrise is " + sunrise + " or " + tix);
+  console.log("Sunset is " + sunset + " or " + time)
+  console.log(time < c);
 
-  if (c <= time) {
+  if (time > c) {
     return sunset.innerHTML = '<i class="wi wi-sunset"></i>' + " Sunset at " + time;
   } else {
-    return sunset.innerHTML = '<i class="wi wi-sunrise"></i>' + " Sunrise at " + time;
+    return sunset.innerHTML = '<i class="wi wi-sunrise"></i>' + " Sunrise at " + tix;
   }
 }
-
+// future update
 function setTempUnit(tempUnit) {
 
 }
