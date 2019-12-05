@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Richard Southard | Local Weather App</title>
     <meta charset="utf-8">
-    <title>Local Weather</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Weather App for FreeCodeCamp.org built by Richard Southard.  This app uses the Open Weather API to display the results.">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="css/weather.css">
     <link rel="stylesheet" href="css/weather-icons.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   </head>
   <body id="whole">
       <h1 id="location" class="text-center"></h1>
@@ -22,16 +26,16 @@
           <div class="">
             <span id="desc"></span><hr>
           </div>
-          <div class=" highLow">
-            <span id="max"></span> /
-            <span id="min"></span>
+          <div class="highLow">
+            <span id="max"></span>&deg; /
+            <span id="min"></span>&deg;
           </div>
 
         </div>
       </div>
 
       <footer>
-        <p class="foot pull-left">By <a href="https://richardsouthard.com">Richard Southard</a></p>
+        <p class="foot pull-left">By <a href="https://richardsouthard.com">Richard Southard</a> | View at <a href="https://github.com/rsouthar/Local_Weather">Github</a></p>
         <p class="sunset pull-right"><span id="sunset"></span></p>
       </footer>
 
