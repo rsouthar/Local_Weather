@@ -1,4 +1,4 @@
-var APPID = "";
+var APPID = config.apiKey;
 var temp;
 var loc;
 var icon;
